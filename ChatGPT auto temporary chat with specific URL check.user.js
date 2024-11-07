@@ -14,8 +14,16 @@
         }
     }
 
+    async function waitForTwoSeconds() {
+        console.log('Waiting for 2 seconds...');
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        console.log('2 seconds passed, continuing execution...');
+      }
+      
+
     // Run on initial page load
     window.onload = function() {
+        waitForTwoSeconds();
         redirectToTemporaryChat();
     };
 
